@@ -19,9 +19,24 @@ namespace CursorMovement
     {
 
         static void Main(string[] args)
-
         {
+            
+            string[,] wall = new string[,] {{"####" }
+                                           ,{"#  #" }
+                                           ,{"#  #" }
+                                           ,{"####" } };
 
+
+            //duvara carpma kosulu icin deneme
+            //int[,] wallLocation = null ;
+            //wallLocation[0, i] =  { wallX, wallY};
+
+
+            int wallX = 5;
+            int wallY = 5;
+
+          
+            int score = 0;
             double time = 0;
 
 
@@ -59,7 +74,27 @@ namespace CursorMovement
             Console.WriteLine("#####################################################");
 
 
-            // --- Main game loop 
+            // --- Main game loop
+
+
+            for(int wallXaxis = 6; wallXaxis < 48; wallXaxis += 5)
+            {
+
+                for( int wallYaxis = 5; wallYaxis < 21 ;wallYaxis+=5 )
+                {
+                    
+                    for (int i = 0; i < wall.GetLength(0); i++)
+                    {
+                        Console.SetCursorPosition(wallXaxis, wallYaxis);
+                        for (int j = 0; j < wall.GetLength(1); j++)
+                        {
+                            Console.WriteLine(wall[i, j]);
+                            wallY++;
+                        }
+                    }
+                }
+            }
+            
 
             while (true)
             {
@@ -160,6 +195,12 @@ namespace CursorMovement
                 Console.SetCursorPosition(70, 3);
                 Console.Write("Time :" + Convert.ToInt16(time));
                 time += 0.07;
+
+                if (cursorx == ax && cursory == ay)
+                    score++;
+
+                Console.SetCursorPosition(70, 5);
+                Console.Write("Score :" + Convert.ToInt16(score));
             }
 
 

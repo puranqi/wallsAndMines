@@ -1,0 +1,15 @@
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/bin/Debug/net6.0/wallsAndMines
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/bin/Debug/net6.0/wallsAndMines.deps.json
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/bin/Debug/net6.0/wallsAndMines.runtimeconfig.json
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/bin/Debug/net6.0/wallsAndMines.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/bin/Debug/net6.0/wallsAndMines.pdb
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.csproj.AssemblyReference.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.AssemblyInfoInputs.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.AssemblyInfo.cs
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.csproj.CoreCompileInputs.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/refint/wallsAndMines.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.pdb
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/wallsAndMines.genruntimeconfig.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/Debug/net6.0/ref/wallsAndMines.dll
