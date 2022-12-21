@@ -20,21 +20,15 @@ namespace CursorMovement
 
         static void Main(string[] args)
         {
-
+            
             Random wallRand = new Random();
-
-            string[,] wall = new string[,] {{"####" }
-                                           ,{"#  #" }
-                                           ,{"#  #" }
-                                           ,{"####" } };
+            int counter = 210;
 
             //duvara carpma kosulu icin deneme
             //int[,] wallLocation = null ;
             //wallLocation[0, i] =  { wallX, wallY};
 
 
-            int wallX = 5;
-            int wallY = 5;
 
           
             int score = 0;
@@ -80,7 +74,7 @@ namespace CursorMovement
 
 
             //Creating inner walls
-            CreatingWalls();
+
             /*
             for(int wallXaxis = 5; wallXaxis <= 50; wallXaxis += 5)
             {
@@ -103,10 +97,21 @@ namespace CursorMovement
                 }
             }
             */
+
+
+
+
             
 
             while (true)
             {
+                if(counter % 210 ==0)                
+                {
+                    RemovingWalls();
+                    CreatingWalls();
+                }
+                counter++;
+
 
                 if (Console.KeyAvailable)
                 {       // true: there is a key in keyboard buffer 
@@ -173,7 +178,6 @@ namespace CursorMovement
                 }
 
 
-
                 if (adir == 1 && ax >= 54) adir = -1;    // change direction at boundaries 
 
                 if (adir == -1 && ax <= 4) adir = 1;
@@ -213,10 +217,23 @@ namespace CursorMovement
             }
 
 
-
             Console.ReadLine();
 
         }
+
+        static void RemovingWalls()
+        {
+            for (int i = 4; i < 55; i++)
+            {
+                for (int j = 4; j < 25; j++)
+                {
+                    Console.SetCursorPosition(i, j);
+                    Console.Write(" ");
+                }
+            }
+
+        }
+
         static void CreatingWalls()
         {
             Random rand = new Random();
