@@ -1,0 +1,15 @@
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/bin/Debug/net6.0/WallsTest
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/bin/Debug/net6.0/WallsTest.deps.json
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/bin/Debug/net6.0/WallsTest.runtimeconfig.json
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/bin/Debug/net6.0/WallsTest.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/bin/Debug/net6.0/WallsTest.pdb
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.csproj.AssemblyReference.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.AssemblyInfoInputs.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.AssemblyInfo.cs
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.csproj.CoreCompileInputs.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/refint/WallsTest.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.pdb
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/WallsTest.genruntimeconfig.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/Debug/net6.0/ref/WallsTest.dll

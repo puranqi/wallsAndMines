@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/wallsAndMines.csproj",
-      "projectName": "wallsAndMines",
-      "projectPath": "/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/wallsAndMines.csproj",
+      "projectUniqueName": "/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/WallsTest.csproj",
+      "projectName": "WallsTest",
+      "projectPath": "/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/WallsTest.csproj",
       "packagesPath": "/Users/macbookair/.nuget/packages/",
-      "outputPath": "/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/obj/",
+      "outputPath": "/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/TestFolders/WallsTest/WallsTest/WallsTest/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/Users/macbookair/.nuget/NuGet/NuGet.Config"

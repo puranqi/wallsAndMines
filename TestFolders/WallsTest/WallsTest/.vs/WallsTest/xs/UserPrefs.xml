@@ -1,13 +1,13 @@
-﻿<Properties StartupConfiguration="{5FBF9F1A-09EA-4015-9601-95171FC451D0}|Default">
-  <MonoDevelop.Ide.Workbench ActiveDocument="wallsAndMines/Program.cs">
+﻿<Properties StartupConfiguration="{C2A78E72-E407-4417-BC33-685BE2726E7F}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="WallsTest/Program.cs">
     <Files>
-      <File FileName="wallsAndMines/Program.cs" Line="27" Column="51" />
+      <File FileName="WallsTest/Program.cs" Line="13" Column="39" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="wallsAndMines" expanded="True">
-            <Node name="wallsAndMines" expanded="True" />
+          <Node name="WallsTest" expanded="True">
+            <Node name="WallsTest" expanded="True" />
           </Node>
         </State>
       </Pad>
@@ -16,8 +16,8 @@
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.ItemProperties.WallsTest PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.ItemProperties.wallsAndMines PreferredExecutionTarget="MonoDevelop.Default" />
   <MonoDevelop.Ide.DebuggingService.PinnedWatches />
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
 </Properties>

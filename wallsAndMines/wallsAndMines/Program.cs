@@ -20,12 +20,13 @@ namespace CursorMovement
 
         static void Main(string[] args)
         {
-            
+
+            Random wallRand = new Random();
+
             string[,] wall = new string[,] {{"####" }
                                            ,{"#  #" }
                                            ,{"#  #" }
                                            ,{"####" } };
-
 
             //duvara carpma kosulu icin deneme
             //int[,] wallLocation = null ;
@@ -59,7 +60,7 @@ namespace CursorMovement
             Console.WriteLine("#####################################################");
 
 
-            for (int i = 0; i < 20; i++)
+            for (int i = 0; i < 22; i++)
             {
 
                 Console.SetCursorPosition(3, 3 + i + 1);
@@ -69,7 +70,7 @@ namespace CursorMovement
 
             }
 
-            Console.SetCursorPosition(3, 23);
+            Console.SetCursorPosition(3, 25);
 
             Console.WriteLine("#####################################################");
 
@@ -77,10 +78,10 @@ namespace CursorMovement
             // --- Main game loop
 
 
-            for(int wallXaxis = 6; wallXaxis < 48; wallXaxis += 5)
+            for(int wallXaxis = 5; wallXaxis <= 50; wallXaxis += 5)
             {
 
-                for( int wallYaxis = 5; wallYaxis < 21 ;wallYaxis+=5 )
+                for( int wallYaxis = 5; wallYaxis < 21 ;wallYaxis+=1 )
                 {
                     
                     for (int i = 0; i < wall.GetLength(0); i++)
@@ -89,9 +90,12 @@ namespace CursorMovement
                         for (int j = 0; j < wall.GetLength(1); j++)
                         {
                             Console.WriteLine(wall[i, j]);
-                            wallY++;
+                            wallYaxis++;
                         }
+                        
                     }
+                    wallY -= wall.GetLength(1);
+
                 }
             }
             
@@ -138,8 +142,8 @@ namespace CursorMovement
                         cursory--;
 
                     }
-
-                    if (cki.Key == ConsoleKey.DownArrow && cursory < 22)
+                    //sets the limit of X player
+                    if (cki.Key == ConsoleKey.DownArrow && cursory < 24)
                     {
 
                         Console.SetCursorPosition(cursorx, cursory);
