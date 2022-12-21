@@ -57,12 +57,61 @@ class Program
 
 
         // --- Inner wall loop
-
-        for (int i = 5; i < 50; i++)
-        {
-            Console.Write('#');
-        }
+        CreatingWalls();
+        
 
         Console.ReadKey();
+    }
+
+    static void CreatingWalls()
+    {
+        Random rand = new Random();
+        for (int wally = 5; wally < 21; wally += 5)
+        {
+
+            for (int wall = 5; wall <= 50; wall += 5)
+            {
+                //Console.SetCursorPosition(wall, wally);
+
+                int noOfWalls = rand.Next(1, 4);
+                for (int j = 0; j < noOfWalls; j++)
+                {
+                    int randWall = rand.Next(1, 5);
+                    switch (randWall)
+                    {
+                        case 1:
+                            for (int i = 0; i <= 3; i++)
+                            {
+                                Console.SetCursorPosition(wall, wally + i);
+                                Console.Write("#");
+                            }
+                            break;
+
+                        case 2:
+                            for (int i = 0; i <= 3; i++)
+                            {
+                                Console.SetCursorPosition(wall + 3, wally + i);
+                                Console.Write("#");
+                            }
+                            break;
+                        case 3:
+                            for (int i = 0; i <= 3; i++)
+                            {
+                                Console.SetCursorPosition(wall + i, wally);
+                                Console.Write("#");
+                            }
+                            break;
+                        case 4:
+                            for (int i = 0; i <= 3; i++)
+                            {
+                                Console.SetCursorPosition(wall + i, wally + 3);
+                                Console.Write("#");
+                            }
+                            break;
+                    }
+                }
+                //Console.Write("#");
+            }
+        }
     }
 }
