@@ -1,7 +1,7 @@
 ﻿<Properties StartupConfiguration="{5FBF9F1A-09EA-4015-9601-95171FC451D0}|Default">
   <MonoDevelop.Ide.Workbench ActiveDocument="wallsAndMines/Program.cs">
     <Files>
-      <File FileName="wallsAndMines/Program.cs" Line="95" Column="1" />
+      <File FileName="wallsAndMines/Program.cs" Line="330" Column="37" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
@@ -14,10 +14,7 @@
     </Pads>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
-    <BreakpointStore>
-      <Breakpoint file="/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/Program.cs" relfile="wallsAndMines/Program.cs" line="83" column="1" />
-      <Breakpoint file="/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/wallsAndMines/wallsAndMines/Program.cs" relfile="wallsAndMines/Program.cs" line="102" column="2" />
-    </BreakpointStore>
+    <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
   <MultiItemStartupConfigurations />
   <MonoDevelop.Ide.ItemProperties.wallsAndMines PreferredExecutionTarget="MonoDevelop.Default" />
