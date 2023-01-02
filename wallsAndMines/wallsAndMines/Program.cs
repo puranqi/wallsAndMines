@@ -20,7 +20,11 @@ namespace CursorMovement
 
         static void Main(string[] args)
         {
-            int[,] innerWall = new int[60, 25];
+            ConsoleColor[] colors = (ConsoleColor[])ConsoleColor.GetValues(typeof(ConsoleColor));
+
+            ConsoleColor currentForeground = Console.ForegroundColor;
+
+            int[,] innerWall = new int[60, 26];
             Random wallRand = new Random();
             int counter = 0;
             //int wallHitCounter = 0;
@@ -38,11 +42,11 @@ namespace CursorMovement
 
             //Console.SetCursorPosition(3, 3);
 
-            int cursorx = 35, cursory = 20;   // position of cursor 
+            int cursorx = 26, cursory = 24;   // position of cursor 
 
             ConsoleKeyInfo cki;               // required for readkey 
 
-            int ax = 13, ay = 5;    // position of A 
+            int ax = 15, ay = 4;    // position of A 
 
             int adirX = 1;            //Xaxis direction of A:   1:rigth   -1:left
 
@@ -54,7 +58,8 @@ namespace CursorMovement
 
             Console.SetCursorPosition(3, 3);
 
-            Console.WriteLine("⬔⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬔");
+            Console.ForegroundColor = colors[9];
+            Console.WriteLine("⬔⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬓⬔", colors[9]);
 
 
             for (int i = 0; i < 22; i++)
@@ -62,15 +67,16 @@ namespace CursorMovement
 
                 Console.SetCursorPosition(3, 3 + i + 1);
 
-
+                
                 Console.WriteLine("▋                                                   ▊");
 
             }
 
             Console.SetCursorPosition(3, 25);
-
+            
             Console.WriteLine("⬕⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬒⬕");
 
+            Console.ResetColor();
 
             // --- Main game loop
 
@@ -92,7 +98,7 @@ namespace CursorMovement
                 counter++;
                 if (counter % 7 == 0)
                 {
-                    RemovingWalls(innerWall);
+                    ShiftingWalls(innerWall);
                 }
 
 
@@ -166,142 +172,150 @@ namespace CursorMovement
                 if (adirX == -1 && ax <= 4) adirX = 1;
 
 
-
                 Console.SetCursorPosition(ax, ay);    // delete old A 
 
-                Console.WriteLine(" ");
-                /*
-                if (adirX == 1)
+                Console.Write(" ");
+                //depending on the location of X and player, chooses the direction of X
+                if (ax == cursorx)
+                    adirX = 0;
+                else if (ax > cursorx)
+                    adirX = -1;
+                else
+                    adirX = 1;
+
+                if (ay == cursory)
+                    adirY = 0;
+                else if (ay > cursory)
+                    adirY = -1;
+                else
+                    adirY = 1;
+
+                if (ax == cursorx && (innerWall[ax, ay + adirY] != 1))
                 {
-                    if (ax == cursorx && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
+                    if (adirY == -1)
                     {
-                        if (ay > cursory)
+                        if (innerWall[ax, ay - 1] != 1)
                         {
-                            adirY = -1;
-                            ay += adirY;
-                        }
-                        else
-                        {
-                            adirY = 1;
                             ay += adirY;
                         }
                     }
-                    
-                        
-                    if (innerWall[ax + adirX, ay] != 1)
+                    else if (adirY == 1)
                     {
-                        if (ax > cursorx)
+                        if (innerWall[ax, ay + 1] != 1)
                         {
-                            adirX = -1;
-                            ax = ax + adirX;
-                        }
-                        else
-                        {
-
-                            adirX = 1;
-                            ax = ax + adirX;
-                        }
-                        //ay += adirY;
-                        //adirX = -1;
-                    }
-                    else if (innerWall[ax + adirX, ay] == 1)
-                    {
-                        if (ay < cursory &&(innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
-                        {
-                            adirY = 1;
                             ay += adirY;
                         }
-                        else if (ay > cursory && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
-                        {
-                            adirY = -1;
-                            ay += adirY;
-                        }
-                         
-                        
                     }
-                    else if (innerWall[ax + 1, ay] == 1 && innerWall[ax - 1, ay] == 1)
-                    {
-                        
-                        ay += adirY;
-
-                    }
-
                 }
 
-                if (adirX == -1)
+                //incase of X intervines a corner, moves to the nearest exit
+                else if (ax == cursorx && (innerWall[ax, ay + adirY] == 1) && (innerWall[ax + 1, ay] != 1 || innerWall[ax +adirX,ay] == 1))
                 {
-                    if (ax == cursorx && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
-                    {
-                        if (ay > cursory && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
-                        {
-                            adirY = -1;
-                            ay += adirY;
-                        }
-                        else
-                        {
-                            adirY = 1;
-                            ay += adirY;
-                        }
-                    }
-                    else if (innerWall[ax + adirX, ay] != 1)
-                    {
 
-                        if (ax > cursorx)
+                    for (int i = 0; i < 4; i++)
+                    {
+                        adirX = 1;
+                        if (innerWall[ax + i, ay] == 1)
                         {
                             adirX = -1;
+                            break;
+                        }
+                    }
+
+                    if (innerWall[ax, ay + adirY] == 1)
+                    {
+
+                        if (innerWall[ax + adirX, ay] != 1)
+                        {
                             ax = ax + adirX;
                         }
-                        else
-                        {
 
-                            adirX = 1;
+                        else if (innerWall[ax + adirX, ay] == 1 && innerWall[ax, ay + adirY] != 1)
+                        {
+                            ay += adirY;
+                        }
+                    }
+                    if (innerWall[ax, ay + adirY] == 1)
+                    {
+                        if (innerWall[ax + adirX, ay] != 1)
+                        {
                             ax = ax + adirX;
                         }
-                        //ay += adirY;
 
-                    }
-                    else if (innerWall[ax + adirX, ay] == 1)
-                    {
-                        //wallHitCounter++;
-                        if (ay < cursory && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
+                        else if (innerWall[ax + adirX, ay] == 1 && innerWall[ax, ay + adirY] != 1)
                         {
-                            adirY = 1;
-                            ay += adirY;
-                        }
-                        else if (ay > cursory && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
-                        {
-                            adirY = -1;
                             ay += adirY;
                         }
                     }
-                    else if (innerWall[ax + 1, ay] == 1 && innerWall[ax - 1, ay] == 1)
+                    if (innerWall[ax, ay + adirY] == 1)
                     {
-                        if (ay < cursory && (innerWall[ax, ay - 1] != 1 || innerWall[ax, ay + 1] != 1))
+                        if (innerWall[ax + adirX, ay] != 1)
                         {
-                            adirY = 1;
-                            ay += adirY;
-                        }
-                        else
-                        {
-                            adirY = -1;
-                            ay += adirY;
+                            ax = ax + adirX;
                         }
 
+                        else if (innerWall[ax + adirX, ay] == 1 && innerWall[ax, ay + adirY] != 1)
+                        {
+                            ay += adirY;
+                        }
                     }
+                    if (innerWall[ax, ay + adirY] == 1)
+                    {
+                        if (innerWall[ax + adirX, ay] != 1)
+                        {
+                            ax = ax + adirX;
+                        }
+
+                        else if (innerWall[ax + adirX, ay] == 1 && innerWall[ax, ay + adirY] != 1)
+                        {
+                            ay += adirY;
+                        }
+                    }
+                    ay += adirY;
                 }
-                */
+                else if (innerWall[ax + adirX, ay] != 1)
+                {
+                    ax = ax + adirX;
+                }
 
-          
+                else if (innerWall[ax + adirX, ay] == 1 && innerWall[ax, ay + adirY] != 1)
+                {
+                    ay += adirY;
+                }
+
+                
+
+                Console.SetCursorPosition(80, 20);
+                Console.Write("wall index-1:" + innerWall[ax, ay - 1]);
+                Console.SetCursorPosition(80, 21);
+                Console.Write("wall index+1:" + innerWall[ax, ay + 1]);
+
+
                 Console.SetCursorPosition(ax, ay);    // refresh A (current position) 
 
-                Console.WriteLine("ᗣ");
-                                
+                
+
+
+                Console.ForegroundColor = colors[11];
+                Console.WriteLine("ᗣ", colors[11]);
+
+                
+                Console.ResetColor();
+                //Console.WriteLine("\nOriginal colors restored...");
+                //Console.ReadLine();
+
+
 
 
                 Console.SetCursorPosition(cursorx, cursory);    // refresh X (current position) 
 
-                Console.WriteLine("ᗧ");
+               
 
+
+                Console.ForegroundColor = colors[14];
+                Console.WriteLine("ᗧ", colors[14]);
+
+                Console.ResetColor();
 
 
                 Thread.Sleep(100);     // sleep 50 ms 
@@ -316,7 +330,10 @@ namespace CursorMovement
                     Console.SetCursorPosition(cursorx, cursory);
                     Console.Write("X");
                     Console.SetCursorPosition(50, 30);
-                    Console.WriteLine("GAMEOVER ,but continue anyways");
+                    Console.ForegroundColor = colors[4];
+                    Console.WriteLine("GAMEOVER ,but continue anyways", colors[4]);
+                    Console.ResetColor();
+                    Console.Beep();
                     //break;
                     score++;
                 }
@@ -329,7 +346,7 @@ namespace CursorMovement
 
         }
 
-        static void RemovingWalls(int[,] innerWall)
+        static void ShiftingWalls(int[,] innerWall)
         {
             int[] Xblock =  {5,10,15,20,25,30,35,40,45,50};
             int[] Yblock =  {5,10,15,20};
@@ -367,35 +384,72 @@ namespace CursorMovement
                             case 1:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall, wally + i);
-                                    Console.Write("■");
-                                    innerWall[wall, wally + i] = 1;
-
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall, wally + i);
+                                        Console.Write("+");
+                                        innerWall[wall, wally + i] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall, wally + i);
+                                        Console.Write("┃");
+                                        innerWall[wall, wally + i] = 1;
+                                    }
                                 }
                                 break;
 
                             case 2:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall + 3, wally + i);
-                                    Console.Write("■");
-                                    innerWall[wall + 3, wally + i] = 1;
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall+3, wally + i);
+                                        Console.Write("+");
+                                        innerWall[wall+3, wally + i] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall+3, wally + i);
+                                        Console.Write("┃");
+                                        innerWall[wall+3, wally + i] = 1;
+                                    }
+
                                 }
                                 break;
                             case 3:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall + i, wally);
-                                    Console.Write("■");
-                                    innerWall[wall + i, wally] = 1;
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally);
+                                        Console.Write("+");
+                                        innerWall[wall + i, wally ] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally );
+                                        Console.Write("━");
+                                        innerWall[wall + i, wally ] = 1;
+                                    }
                                 }
                                 break;
                             case 4:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall + i, wally + 3);
-                                    Console.Write("■");
-                                    innerWall[wall + i, wally + 3] = 1;
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally + 3);
+                                        Console.Write("+");
+                                        innerWall[wall + i, wally + 3] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally + 3);
+                                        Console.Write("━");
+                                        innerWall[wall + i, wally + 3] = 1;
+                                    }
+                                    
                                 }
                                 break;
 
@@ -427,35 +481,72 @@ namespace CursorMovement
                             case 1:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall, wally + i);
-                                    Console.Write("■");
-                                    innerWall[wall, wally + i] = 1;
-
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall, wally + i);
+                                        Console.Write("+");
+                                        innerWall[wall, wally + i] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall, wally + i);
+                                        Console.Write("┃");
+                                        innerWall[wall, wally + i] = 1;
+                                    }
                                 }
                                 break;
 
                             case 2:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall + 3, wally + i);
-                                    Console.Write("■");
-                                    innerWall[wall + 3, wally + i] = 1;
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall + 3, wally + i);
+                                        Console.Write("+");
+                                        innerWall[wall + 3, wally + i] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall + 3, wally + i);
+                                        Console.Write("┃");
+                                        innerWall[wall + 3, wally + i] = 1;
+                                    }
+
                                 }
                                 break;
                             case 3:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall + i, wally);
-                                    Console.Write("■");
-                                    innerWall[wall + i, wally] = 1;
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally);
+                                        Console.Write("+");
+                                        innerWall[wall + i, wally] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally);
+                                        Console.Write("━");
+                                        innerWall[wall + i, wally] = 1;
+                                    }
                                 }
                                 break;
                             case 4:
                                 for (int i = 0; i <= 3; i++)
                                 {
-                                    Console.SetCursorPosition(wall + i, wally + 3);
-                                    Console.Write("■");
-                                    innerWall[wall + i, wally + 3] = 1;
+                                    if (i == 0 || i == 3)
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally + 3);
+                                        Console.Write("+");
+                                        innerWall[wall + i, wally + 3] = 1;
+                                    }
+                                    else
+                                    {
+                                        Console.SetCursorPosition(wall + i, wally + 3);
+                                        Console.Write("━");
+                                        innerWall[wall + i, wally + 3] = 1;
+                                    }
+
                                 }
                                 break;
 
