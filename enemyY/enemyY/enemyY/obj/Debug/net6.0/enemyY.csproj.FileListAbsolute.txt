@@ -1,0 +1,15 @@
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/bin/Debug/net6.0/enemyY
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/bin/Debug/net6.0/enemyY.deps.json
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/bin/Debug/net6.0/enemyY.runtimeconfig.json
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/bin/Debug/net6.0/enemyY.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/bin/Debug/net6.0/enemyY.pdb
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.csproj.AssemblyReference.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.GeneratedMSBuildEditorConfig.editorconfig
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.AssemblyInfoInputs.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.AssemblyInfo.cs
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.csproj.CoreCompileInputs.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/refint/enemyY.dll
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.pdb
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/enemyY.genruntimeconfig.cache
+/Users/macbookair/Desktop/DEU/project based learning/wallsAndMines/enemyY/enemyY/enemyY/obj/Debug/net6.0/ref/enemyY.dll

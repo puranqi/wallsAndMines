@@ -1,19 +1,19 @@
-﻿<Properties StartupConfiguration="{5FBF9F1A-09EA-4015-9601-95171FC451D0}|Default">
+﻿<Properties StartupConfiguration="{3C121881-CCB4-4E35-8705-5D39D11C5A01}|Default">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
     <BreakpointStore />
   </MonoDevelop.Ide.DebuggingService.Breakpoints>
-  <MonoDevelop.Ide.ItemProperties.wallsAndMines PreferredExecutionTarget="MonoDevelop.Default" />
+  <MonoDevelop.Ide.ItemProperties.enemyY PreferredExecutionTarget="MonoDevelop.Default" />
   <MultiItemStartupConfigurations />
-  <MonoDevelop.Ide.Workbench ActiveDocument="wallsAndMines/Program.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="enemyY/Program.cs">
     <Files>
-      <File FileName="wallsAndMines/Program.cs" Line="5" Column="19" />
+      <File FileName="enemyY/Program.cs" Line="469" Column="18" />
     </Files>
     <Pads>
       <Pad Id="ProjectPad">
         <State name="__root__">
-          <Node name="wallsAndMines" expanded="True">
-            <Node name="wallsAndMines" expanded="True" />
+          <Node name="enemyY" expanded="True">
+            <Node name="enemyY" expanded="True" />
           </Node>
         </State>
       </Pad>
